@@ -2,7 +2,7 @@ exports.AppController = (app) ->
 
   ROOT_DIR = "#{__dirname}/../.."
 
-  {App} = app.settings.models app
+  {App} = app.settings.models
 
   return {
     index: (req, res, next) ->
