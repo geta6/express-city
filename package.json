@@ -1,0 +1,20 @@
+{
+  "name": "Express-City",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "EXEC=`ls | grep .coffee` && NODE_ENV=production forever start -c coffee ./$EXEC",
+    "stop": "EXEC=`ls | grep .coffee` && forever stop $EXEC",
+    "test": "EXEC=`ls | grep .coffee` && coffee $EXEC"
+  },
+  "dependencies": {
+    "underscore": "*",
+    "mongoose": "*",
+    "express": "*",
+    "connect-assets": "*",
+    "coffee-script": "*",
+    "jade": "*",
+    "stylus": "*",
+    "nib": "*"
+  }
+}
