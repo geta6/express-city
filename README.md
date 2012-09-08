@@ -1,6 +1,8 @@
 ![express-city](http://f.cl.ly/items/2118230z3B1U1e0Q3T11/city.jpg)
 
-Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com).
+  Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
+
+  refer to [qiao/coffee-box](https://github.com/qiao/coffee-box) on development
 
 
 ## Requirement
@@ -24,16 +26,30 @@ Web application template for [nodejs](http://nodejs.org) based on [express](http
 
     $ node city
 
-  Daemonize the server
+  Daemonize the server:
 
     $ npm install -g forever coffee-script
     $ npm start
+
+
+## Application flow
+
+  * `city.js` hooks `city.coffee`
+  * `city.coffee` create the server and configure app from `./config/{config, routes}`
+  * `config/config` configure app
+    * MVC module, assets, session, route order, mongoose
+  * `config/routes` configure routes
+    * define filter and controller
+  * `app/controllers` requires `app/models` bundled in `config/config`
+    * `{Model} = app.settings.models app`
+    * controller rendering `app/views` with `app/models`
 
 
 ## Features
 
   * MVC separated
   * Asset manager
+  * Global underscore defined
   * HTML build system is `jade`
   * Stylesheet build system is `stylus`
   * Javascript build system is `coffee-script`
