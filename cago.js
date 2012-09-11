@@ -1,2 +1,2 @@
 require('coffee-script');
-require('./city.coffee');
+require('./cago.coffee');

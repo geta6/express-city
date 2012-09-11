@@ -1,5 +1,18 @@
 {
-  "port"      : 3000,
-  "dbpath"    : "mongodb://localhost/express-city",
-  "secretKey" : "secret"
+  "port"           : 8004,
+  "dbpath"         : "mongodb://localhost/cago",
+  "session_secret" : "b123bb66db0264914a874f269e9b47d1",
+  "session_store"  : "session_store",
+  "oauthkey"      : {
+    "twitter": {
+      "consumerKey"    : "6DfG5s6vy21DJkqOvRvA",
+      "consumerSecret" : "8wDxCLSFH6VyfzrLWZT2dYvwAqMoFouknoLyxdnDfh8",
+      "callbackURL"    : "http://cago.in/callback/twitter"
+    },
+    "facebook": {
+      "clientID"     : "499779270051753",
+      "clientSecret" : "0wQFW74UqOAfxzJo32wjGnpnUTjn2ygF6tNHdkZ0",
+      "callbackURL"  : "http://cago.in/callback/facebook"
+    },
+  }
 }

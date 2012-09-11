@@ -1,6 +1,12 @@
 express  = require 'express'
 assets   = require 'connect-assets'
 mongoose = require 'mongoose'
+passport = require 'passport'
+sessions = require('connect-mongo') express
+strategy =
+  twitter: (require 'passport-twitter').Strategy
+  facebook: (require 'passport-facebook').Strategy
+
 {bundle} = require '../lib/bundle'
 
 ROOT_DIR = "#{__dirname}/.."
@@ -20,7 +26,9 @@ module.exports = (app) ->
     app.use express.bodyParser()
     app.use express.methodOverride()
     app.use express.cookieParser()
-    app.use express.session(secret: app.settings.secretKey)
+    app.use express.session
+      secret: app.settings.session_secret
+      store : new sessions { db: app.settings.session_store }
     app.use express.static "#{ROOT_DIR}/public"
     app.use assets
       src: 'app/assets'
@@ -33,3 +41,29 @@ module.exports = (app) ->
     app.use express.errorHandler()
 
   mongoose.connect app.settings.dbpath
+
+  passport.serializeUser (user, done) ->
+    done null, user
+
+  passport.deserializeUser (user, done) ->
+    done null, user
+
+  passport.use new strategy.twitter app.settings.oauthkey.twitter, (token, secret, profile, done) ->
+    _.extend user = {}, profile._json
+    console.log user
+    done null,
+      screen_name: user.screen_name
+      profile_image_url: user.profile_image_url
+      id_str: user.id_str
+      token: token
+      secret: secret
+
+  passport.use new strategy.facebook app.settings.oauthkey.facebook, (token, secret, profile, done) ->
+    _.extend user = {}, profile._json
+    console.log user
+    done null,
+      screen_name: user.screen_name
+      profile_image_url: user.profile_image_url
+      id_str: user.id_str
+      token: token
+      secret: secret
