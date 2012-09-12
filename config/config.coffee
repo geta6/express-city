@@ -3,9 +3,7 @@ assets   = require 'connect-assets'
 mongoose = require 'mongoose'
 passport = require 'passport'
 sessions = require('connect-mongo') express
-strategy =
-  twitter: (require 'passport-twitter').Strategy
-  facebook: (require 'passport-facebook').Strategy
+strategy = (require 'passport-twitter').Strategy
 
 {bundle} = require '../lib/bundle'
 
@@ -48,22 +46,7 @@ module.exports = (app) ->
   passport.deserializeUser (user, done) ->
     done null, user
 
-  passport.use new strategy.twitter app.settings.oauthkey.twitter, (token, secret, profile, done) ->
+  passport.use new strategy app.settings.oauthkey, (token, secret, profile, done) ->
     _.extend user = {}, profile._json
-    console.log user
-    done null,
-      screen_name: user.screen_name
-      profile_image_url: user.profile_image_url
-      id_str: user.id_str
-      token: token
-      secret: secret
+    done null, user
 
-  passport.use new strategy.facebook app.settings.oauthkey.facebook, (token, secret, profile, done) ->
-    _.extend user = {}, profile._json
-    console.log user
-    done null,
-      screen_name: user.screen_name
-      profile_image_url: user.profile_image_url
-      id_str: user.id_str
-      token: token
-      secret: secret

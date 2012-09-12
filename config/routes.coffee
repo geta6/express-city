@@ -6,5 +6,3 @@ module.exports = (app) ->
 
   # Routing
   app.get '/', AppController.index
-
-  # Failed

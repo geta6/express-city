@@ -10,6 +10,8 @@
   "dependencies": {
     "underscore": "*",
     "mongoose": "*",
+    "passport": "*",
+    "passport-twitter": "*",
     "express": "*",
     "connect-assets": "*",
     "coffee-script": "*",
