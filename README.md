@@ -1,4 +1,5 @@
-![express-city](http://f.cl.ly/items/2118230z3B1U1e0Q3T11/city.jpg)
+
+[![express-city](http://f.cl.ly/items/2118230z3B1U1e0Q3T11/city.jpg)](https://github.com/geta6/express-city)
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
 

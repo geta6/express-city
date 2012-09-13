@@ -3,20 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "EXEC=`ls | grep .coffee` && NODE_ENV=production forever start -c coffee ./$EXEC",
-    "stop": "EXEC=`ls | grep .coffee` && forever stop $EXEC",
-    "test": "EXEC=`ls | grep .coffee` && coffee $EXEC"
+    "start": "NODE_ENV=production forever start -c coffee ./city.coffee",
+    "stop": "forever stop ./city.coffee"
   },
   "dependencies": {
     "underscore": "*",
+    "moment": "*",
+    "async": "*",
+    "robotskirt": "*",
     "mongoose": "*",
-    "passport": "*",
-    "passport-twitter": "*",
     "express": "*",
     "connect-assets": "*",
     "coffee-script": "*",
     "jade": "*",
     "stylus": "*",
     "nib": "*"
+  },
+  "local": {
+    "port": 3000,
+    "dbpath": "mongodb://localhost/express_city"
   }
 }

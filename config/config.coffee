@@ -1,19 +1,17 @@
-express  = require 'express'
-assets   = require 'connect-assets'
-mongoose = require 'mongoose'
-passport = require 'passport'
-sessions = require('connect-mongo') express
-strategy = (require 'passport-twitter').Strategy
-
-{bundle} = require '../lib/bundle'
-
 ROOT_DIR = "#{__dirname}/.."
 NODE_ENV = process.env.NODE_ENV
 
+express  = require 'express'
+assets   = require 'connect-assets'
+mongoose = require 'mongoose'
+packages = require "#{ROOT_DIR}/package.json"
+
+{bundle} = require '../lib/bundle'
+
 module.exports = (app) ->
   app.configure ->
-    app.set 'version', (require "#{ROOT_DIR}/package.json").version
-    app.set k, v for k, v of require './sites.json'
+    app.set 'version', packages.version
+    app.set k, v for k, v of packages.local
     app.set 'port', process.env.PORT || app.settings.port
     app.set 'models', bundle "#{ROOT_DIR}/app/models"
     app.set 'controllers', bundle "#{ROOT_DIR}/app/controllers"
@@ -24,9 +22,6 @@ module.exports = (app) ->
     app.use express.bodyParser()
     app.use express.methodOverride()
     app.use express.cookieParser()
-    app.use express.session
-      secret: app.settings.session_secret
-      store : new sessions { db: app.settings.session_store }
     app.use express.static "#{ROOT_DIR}/public"
     app.use assets
       src: 'app/assets'
@@ -39,14 +34,3 @@ module.exports = (app) ->
     app.use express.errorHandler()
 
   mongoose.connect app.settings.dbpath
-
-  passport.serializeUser (user, done) ->
-    done null, user
-
-  passport.deserializeUser (user, done) ->
-    done null, user
-
-  passport.use new strategy app.settings.oauthkey, (token, secret, profile, done) ->
-    _.extend user = {}, profile._json
-    done null, user
-

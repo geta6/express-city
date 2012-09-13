@@ -1,6 +1,6 @@
 require 'coffee-script'
 
-global._ = require 'underscore'
+#global._ = require 'underscore'
 
 http     = require 'http'
 express  = require 'express'

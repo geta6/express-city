@@ -1,6 +1,8 @@
 exports.AppController = (app) ->
 
-  ROOT_DIR = "#{__dirname}/../.."
+  fs = require 'fs'
+  rs = require 'robotskirt'
+  md = rs.Markdown.std()
 
   {App} = app.settings.models
 
@@ -8,4 +10,5 @@ exports.AppController = (app) ->
     index: (req, res, next) ->
       res.render 'index'
         title: 'Express'
+        html: md.render fs.readFileSync "#{__dirname}/../../README.md"
   }
