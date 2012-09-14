@@ -11,8 +11,7 @@
     "coffee-script": "*",
     "jade": "*",
     "stylus": "*",
-    "nib": "*",
-    "robotskirt": "*"
+    "nib": "*"
   },
   "devDependencies": {
     "mocha": "*"
