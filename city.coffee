@@ -1,8 +1,9 @@
 require 'coffee-script'
 require 'colors'
 
-global._ = require 'underscore'
+process.env.NODE_ENV = process.env.NODE_ENV || 'development'
 
+global._ = require 'underscore'
 http     = require 'http'
 express  = require 'express'
 app      = express()

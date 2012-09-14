@@ -4,8 +4,6 @@
   "private": true,
   "dependencies": {
     "underscore": "*",
-    "moment": "*",
-    "async": "*",
     "colors": "*",
     "mongoose": "*",
     "express": "*",
@@ -17,9 +15,7 @@
     "robotskirt": "*"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*",
-    "sinon": "*"
+    "mocha": "*"
   },
   "scripts": {
     "start": "NODE_ENV=production forever start city.js",

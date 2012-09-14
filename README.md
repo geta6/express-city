@@ -4,9 +4,6 @@
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
 
-  refer to [qiao/coffee-box](https://github.com/qiao/coffee-box) on development
-
-
 ## Requirement
 
   * NodeJS
@@ -46,8 +43,6 @@
 ## Future
 
   * Tests
-  * Session
-  * Authetication
   * Example
 
 
