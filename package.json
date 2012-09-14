@@ -1,23 +1,33 @@
 {
   "name": "Express-City",
-  "version": "0.1.0",
+  "version": "0.2.2",
   "private": true,
-  "scripts": {
-    "start": "NODE_ENV=production forever start -c coffee ./city.coffee",
-    "stop": "forever stop ./city.coffee"
-  },
   "dependencies": {
     "underscore": "*",
     "moment": "*",
     "async": "*",
-    "robotskirt": "*",
+    "colors": "*",
     "mongoose": "*",
     "express": "*",
     "connect-assets": "*",
     "coffee-script": "*",
     "jade": "*",
     "stylus": "*",
-    "nib": "*"
+    "nib": "*",
+    "robotskirt": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*",
+    "sinon": "*"
+  },
+  "scripts": {
+    "start": "NODE_ENV=production forever start city.js",
+    "stop": "forever stop city.js",
+    "test": "mocha --compilers coffee:coffee-script"
+  },
+  "engines": {
+    "node": ">=0.8.x"
   },
   "local": {
     "port": 3000,

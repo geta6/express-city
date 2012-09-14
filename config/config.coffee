@@ -1,9 +1,8 @@
 ROOT_DIR = "#{__dirname}/.."
-NODE_ENV = process.env.NODE_ENV
 
+mongoose = require 'mongoose'
 express  = require 'express'
 assets   = require 'connect-assets'
-mongoose = require 'mongoose'
 packages = require "#{ROOT_DIR}/package.json"
 
 {bundle} = require '../lib/bundle'
@@ -31,4 +30,7 @@ module.exports = (app) ->
   app.configure 'development', ->
     app.use express.errorHandler()
 
-  mongoose.connect app.settings.dbpath
+  mongoose.connect app.settings.dbpath, (error) ->
+    if error
+      console.error (String error).red
+      process.exit 2

@@ -1,5 +1,6 @@
+[![Build Status](https://secure.travis-ci.org/geta6/express-city.png?branch=master)](http://travis-ci.org/geta6/express-city)
 
-[![express-city](http://f.cl.ly/items/2118230z3B1U1e0Q3T11/city.jpg)](https://github.com/geta6/express-city)
+[![express-city](http://dl.dropbox.com/u/5390234/express-city.jpg)](https://github.com/geta6/express-city)
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
 
@@ -10,6 +11,15 @@
 
   * NodeJS
   * MongoDB
+
+
+## Describer
+
+  * `express`: Web-application framework
+  * `mongoose`: ORM for MongoDB
+  * `jade`: html describer
+  * `stylus`: css describer
+  * `coffee-script`: js describer
 
 
 ## Quick Start
@@ -27,34 +37,10 @@
 
     $ node city
 
-  Daemonize the server:
+  Daemonize the server with production environment:
 
-    $ npm install -g forever coffee-script
+    $ npm install -g forever
     $ npm start
-
-
-## Application flow
-
-  * `city.js` hooks `city.coffee`
-  * `city.coffee` create the server and configure app from `./config/{config, routes}`
-  * `config/config` configure app
-    * MVC module, assets, session, route order, mongoose
-  * `config/routes` configure routes
-    * define filter and controller
-  * `app/controllers` requires `app/models` bundled in `config/config`
-    * `{Model} = app.settings.models app`
-    * controller rendering `app/views` with `app/models`
-
-
-## Features
-
-  * MVC separated
-  * Asset manager
-  * Global underscore defined
-  * HTML build system is `jade`
-  * Stylesheet build system is `stylus`
-  * Javascript build system is `coffee-script`
-  * Environment based configuration
 
 
 ## Future
