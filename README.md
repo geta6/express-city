@@ -1,5 +1,3 @@
-[![Build Status](https://secure.travis-ci.org/geta6/express-city.png?branch=master)](http://travis-ci.org/geta6/express-city)
-
 [![express-city](http://dl.dropbox.com/u/5390234/express-city.jpg)](https://github.com/geta6/express-city)
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
@@ -17,6 +15,7 @@
   * `jade`: html describer
   * `stylus`: css describer
   * `coffee-script`: js describer
+  * `bootstrap`: style template
 
 
 ## Quick Start

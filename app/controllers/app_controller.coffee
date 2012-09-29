@@ -5,5 +5,5 @@ exports.AppController = (app) ->
   return {
     index: (req, res, next) ->
       res.render 'index'
-        title: 'Express'
+        req: req
   }

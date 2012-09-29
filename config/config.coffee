@@ -24,7 +24,9 @@ module.exports = (app) ->
     app.use express.static "#{ROOT_DIR}/public"
     app.use assets
       src: 'app/assets'
+      build: yes
       buildDir: no
+      detectChanges: yes
     app.use app.router
 
   app.configure 'development', ->

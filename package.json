@@ -10,16 +10,14 @@
     "connect-assets": "*",
     "coffee-script": "*",
     "jade": "*",
+    "marked": "*",
     "stylus": "*",
     "nib": "*"
   },
-  "devDependencies": {
-    "mocha": "*"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "NODE_ENV=production forever start city.js",
-    "stop": "forever stop city.js",
-    "test": "mocha --compilers coffee:coffee-script"
+    "start": "NODE_ENV=production forever start index.js",
+    "stop": "forever stop index.js"
   },
   "engines": {
     "node": ">=0.8.x"
