@@ -31,7 +31,7 @@
 
   Start the server:
 
-    $ node city
+    $ node index
 
   Daemonize the server with production environment:
 
