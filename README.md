@@ -1,4 +1,4 @@
-[![express-city](https://docs.google.com/open?id=0B_iPLlyGvUQTTElNM3ZEdlYzR2M)](https://github.com/geta6/express-city)
+[![express-city](https://lh4.googleusercontent.com/VqhUaf0iK8mvhNV5HZhsmbi5BZsDHFiX2YhazlzI4K4JiNaCshGguHDdW0Pell5jB2VuVnLhOKA)](https://github.com/geta6/express-city)
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
 
