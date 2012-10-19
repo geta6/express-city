@@ -39,5 +39,5 @@
     "dbpath": "mongodb://localhost/express_city"
   },
   "license": "MIT",
-  "readme": "https://github.com/geta6/express-city/blob/master/README.md",
+  "readme": "https://github.com/geta6/express-city/blob/master/README.md"
 }
