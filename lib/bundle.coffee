@@ -1,6 +1,7 @@
 fs   = require 'fs'
 path = require 'path'
 
+# Return files end with .coffee or .js under specified directory.
 exports.bundle = (dirname) ->
   bundle = {}
   for filename in fs.readdirSync dirname

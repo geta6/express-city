@@ -3,16 +3,19 @@ html
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    != css('bootstrap.min')
+    != css('bootstrap')
+    //!= css('normalize')
     != css('common-style')
-    != css('bootstrap-responsive.min')
-    != js('jquery-1.8.2.min')
-    != js('bootstrap.min')
-    != js('common-script')
+    != css('bootstrap-responsive')
+    != js('jquery')
+    != js('bootstrap')
+    != js('underscore')
+    //!= js('backbone')
+    != js('commons')
   body
     .navbar.navbar-fixed-top
       .navbar-inner
-        .container
+        .container-fluid
           a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
             span.icon-bar
             span.icon-bar
@@ -26,5 +29,5 @@ html
               li: a(href='#about') About
               li: a(href='#contact') Contact
 
-    .container
+    .container-fluid
       block content

@@ -8,8 +8,9 @@ http     = require 'http'
 express  = require 'express'
 app      = express()
 
-(require './config/config') app
-(require './config/routes') app
+(require './config') app
+(require './routes') app
 
 http.createServer(app).listen app.get('port'), ->
-  console.log "City listening on port #{app.get 'port'} in #{process.env.NODE_ENV} mode.".green
+  console.info "HTTP server listening on port #{app.get 'port'}."
+  console.info "Application is #{process.env.NODE_ENV} mode."

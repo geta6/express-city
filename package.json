@@ -5,6 +5,7 @@
   "dependencies": {
     "underscore": "*",
     "colors": "*",
+    "consolable": "*",
     "mongoose": "*",
     "express": "*",
     "connect-assets": "*",
@@ -16,8 +17,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "NODE_ENV=production forever start index.js",
-    "stop": "forever stop index.js"
+    "start": "NODE_ENV=production forever start server.js",
+    "stop": "forever stop server.js"
   },
   "engines": {
     "node": ">=0.8.x"

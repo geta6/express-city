@@ -1,3 +1,3 @@
 require('coffee-script');
-require('./index.coffee');
+require('./config/server');
 
