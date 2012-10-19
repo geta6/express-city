@@ -1,19 +1,30 @@
 {
-  "name": "Express-City",
-  "version": "0.2.2",
-  "private": true,
+  "name": "express-city",
+  "description": "web application template for nodejs based on express",
+  "version": "0.3.1",
+  "author": {
+    "name": "geta6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/geta6/express-city.git"
+  },
+  "keywords": [
+    "express",
+    "template"
+  ],
   "dependencies": {
-    "underscore": "*",
-    "colors": "*",
-    "consolable": "*",
-    "mongoose": "*",
-    "express": "*",
+    "underscore": ">=1.4.2",
+    "colors": ">=0.6.0",
+    "consolable": ">=0.1.4",
+    "mongoose": ">=3.3.1",
+    "express": ">=3.0.0rc5",
     "connect-assets": "*",
-    "coffee-script": "*",
+    "coffee-script": ">=1.3.3",
     "jade": "*",
-    "marked": "*",
-    "stylus": "*",
-    "nib": "*"
+    "marked": ">=0.2.5",
+    "stylus": ">=0.30.1",
+    "nib": ">=0.8.2"
   },
   "devDependencies": {},
   "scripts": {
@@ -26,5 +37,7 @@
   "local": {
     "port": 3000,
     "dbpath": "mongodb://localhost/express_city"
-  }
+  },
+  "license": "MIT",
+  "readme": "https://github.com/geta6/express-city/blob/master/README.md",
 }
