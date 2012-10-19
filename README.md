@@ -15,7 +15,7 @@
   * `jade`: html describer
   * `stylus`: css describer
   * `coffee-script`: js describer
-  * `bootstrap`: style template
+  * `bootstrap-2.1.1`: style template
 
 
 ## Quick Start
@@ -33,10 +33,24 @@
 
     $ node index
 
+  or
+
+    $ node .
+
   Daemonize the server with production environment:
 
     $ npm install -g forever
     $ npm start
+
+  Stop daemonized server:
+
+    $ npm stop
+
+  or
+
+    $ forever list
+    # find uid of 4 chars like `upb4`
+    $ forever stop $UID
 
 
 ## Future
@@ -49,7 +63,7 @@
 
 (The MIT License)
 
-Copyright 2012 geta6
+Copyright (c) 2012 geta6
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
