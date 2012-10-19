@@ -1,4 +1,4 @@
-[![express-city](https://lh4.googleusercontent.com/VqhUaf0iK8mvhNV5HZhsmbi5BZsDHFiX2YhazlzI4K4JiNaCshGguHDdW0Pell5jB2VuVnLhOKA)](https://github.com/geta6/express-city)
+[![express-city](https://photos-5.dropbox.com/t/0/AACamN0ShDtdtVngKsOQUuS7dKUaRGWgzk2yK6Umnz3AGA/10/112615465/jpeg/1024x768/2/1350619200/0/2/express-city.jpg/4qUmj_Dw3CP7s3duz9wJTHfzixXqxGdYPR7Ld5Y6CaY)](https://github.com/geta6/express-city)
 
   Web application template for [nodejs](http://nodejs.org) based on [express](http://expressjs.com)
 
