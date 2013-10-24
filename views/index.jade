@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  unless req.isAuthenticated()
+    p: a(href='/session') Sign in
+  else
+    p: a(href='/#{req.user.name}') Your page
+    p: a(href='/session/logout') Sign out

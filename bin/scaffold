@@ -1,0 +1,82 @@
+#!/usr/bin/env coffee
+
+fs = require 'fs'
+path = require 'path'
+
+process.argv.shift()
+process.argv.shift()
+
+type = no
+name = no
+
+loop
+  break if fs.existsSync path.resolve 'package.json'
+  process.chdir '..'
+  if '/' is process.cwd()
+    console.error 'no package.json found'
+    process.exit 1
+
+while arg = process.argv.shift()
+  switch arg
+    when '-t', '--type'
+      type = process.argv.shift()
+      type = no unless /(event|model|helper)/.test type
+    when '-n', '--name'
+      name = String process.argv.shift()
+      name = no if 1 > name.length
+
+if !type or !name
+  console.error '''
+    Usage: scaffold -t [type] -n [name]
+
+      -t, --type  : event or model or helper
+      -n, --name  : name of file
+    '''
+  process.exit 1
+
+String::toUpperCapital = ->
+  @charAt(0).toUpperCase() + @slice 1
+
+type = type.trim()
+name = name.trim()
+
+if /event/.test type
+  namepath = path.resolve 'events', "#{name.toUpperCapital()}.coffee"
+  fs.writeFileSync namepath, """
+    exports.#{name.toUpperCapital()} = (app) ->
+      # methods
+
+    """
+  return console.log " -> #{namepath}"
+
+if /model/.test type
+  namepath = path.resolve 'models', "#{name.toUpperCapital()}.coffee"
+  fs.writeFileSync namepath, """
+    mongoose = require 'mongoose'
+
+    #{name.toUpperCapital()}Model = new mongoose.Schema
+      # schema
+    ,
+      versionKey: no
+
+    ##{name.toUpperCapital()}Model.virtual('some').get ->
+    #  return 'some'
+
+    ##{name.toUpperCapital()}Model.statics.somemethod = (id, done) ->
+    #  @findOne id: id, {}, {}, (err, #{name}) ->
+    #    console.error err if err
+    #    return done err, #{name}
+
+    exports.#{name.toUpperCapital()} = mongoose.model '#{name}', #{name.toUpperCapital()}Model
+
+    """
+  return console.log " -> #{namepath}"
+
+if /helper/.test type
+  namepath = path.resolve 'helper', "#{name}.coffee"
+  return fs.writeFileSync namepath, """
+    exports.#{name} = ->
+      return null
+    """
+  return console.log " -> #{namepath}"
+
