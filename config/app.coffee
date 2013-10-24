@@ -10,11 +10,11 @@ direquire = require 'direquire'
 
 # Environment
 
-process.env.URI = 'http://www.geta6.net:3000'
-process.env.MONGO = 'mongodb://localhost/nabet'
-process.env.TOKEN = 'keyboardcat'
-process.env.TOKEN_KEY = 'CYYXtfgEPL2yXxbsdXk1A'
-process.env.TOKEN_SEC = 'ZwPIudqA5QXm8FYmmqsLvakqyP8zFzLVNkbAxAtRaA'
+process.env.URI = 'http://example.com'
+process.env.MONGO = 'mongodb://localhost/example'
+process.env.TOKEN = 'test session token'
+process.env.TOKEN_KEY = ''
+process.env.TOKEN_SEC = ''
 unless process.env.NODE_ENV
   process.env.NODE_ENV = 'development'
 
