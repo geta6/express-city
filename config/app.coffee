@@ -10,13 +10,8 @@ direquire = require 'direquire'
 
 # Environment
 
-process.env.URI = 'http://example.com'
-process.env.MONGO = 'mongodb://localhost/example'
-process.env.TOKEN = 'test session token'
-process.env.TOKEN_KEY = ''
-process.env.TOKEN_SEC = ''
-unless process.env.NODE_ENV
-  process.env.NODE_ENV = 'development'
+for k, v of require path.resolve 'config', 'env.json'
+  process.env[k.toUpperCase()] = v
 
 # Database
 

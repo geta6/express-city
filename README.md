@@ -10,7 +10,11 @@ express-city, express template.
 
 ## usage
 
-#### scaffold
+### config file
+
+    cp config/env.json.sample config/env.json
+
+### scaffold
 
 ```
 Usage: scaffold -t [type] -n [name]
