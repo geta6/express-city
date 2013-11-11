@@ -1,1 +1,1 @@
-web: coffee config/web.coffee
+web: make run

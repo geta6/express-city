@@ -1,4 +1,4 @@
-.PHONY: run dev build test
+.PHONY: dev run build watch test
 
 dev:
 	NDOE_ENV=development \
@@ -12,6 +12,9 @@ run:
 
 build:
 	grunt build
+
+watch:
+	grunt
 
 test:
 	NODE_ENV=test \
