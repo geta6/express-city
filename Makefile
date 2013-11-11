@@ -1,4 +1,4 @@
-.PHONY: run dev build mocha
+.PHONY: run dev build test
 
 dev:
 	NDOE_ENV=development \
