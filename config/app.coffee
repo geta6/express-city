@@ -10,7 +10,7 @@ direquire = require 'direquire'
 
 # Environment
 
-for k, v of require path.resolve 'config', 'env.json'
+for k, v of require path.resolve 'config', 'env'
   process.env[k.toUpperCase()] = v
 
 # Database
@@ -57,20 +57,20 @@ app = module.exports = ( ->
 
 # Authenticate
 
-( ->
-  {User} = app.get 'models'
-  passport.serializeUser (user, done) ->
-    done null, user
-  passport.deserializeUser (user, done) ->
-    User.findOne _id: user._id, done
-  passport.use new (require 'passport-twitter').Strategy
-    consumerKey: process.env.TOKEN_KEY
-    consumerSecret: process.env.TOKEN_SEC
-    callbackURL: "#{process.env.URI}/session/callback"
-  , (token, secret, profile, done) ->
-    process.nextTick ->
-      User.findOrCreateByTwitter token, secret, profile, done
-)()
+#( ->
+#  {User} = app.get 'models'
+#  passport.serializeUser (user, done) ->
+#    done null, user
+#  passport.deserializeUser (user, done) ->
+#    User.findOne _id: user._id, done
+#  passport.use new (require 'passport-twitter').Strategy
+#    consumerKey: process.env.TOKEN_KEY
+#    consumerSecret: process.env.TOKEN_SEC
+#    callbackURL: "#{process.env.URI}/session/callback"
+#  , (token, secret, profile, done) ->
+#    process.nextTick ->
+#      User.findOrCreateByTwitter token, secret, profile, done
+#)()
 
 # Routes
 

@@ -27,6 +27,10 @@
     "supertest": "~0.8.0",
     "mocha": "~1.13.0",
     "coffee-script": "~1.6.3",
-    "underscore": "~1.5.2"
+    "underscore": "~1.5.2",
+    "grunt-simple-mocha": "~0.4.0",
+    "grunt-notify": "~0.2.17",
+    "grunt-coffeelint": "0.0.8",
+    "coffee-errors": "~0.8.5"
   }
 }

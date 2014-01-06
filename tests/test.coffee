@@ -19,19 +19,22 @@ describe 'express-city', ->
   it 'should be load events from directory', (done) ->
     fromDir = direquire path.resolve 'events'
     fromApp = express.get 'events'
-    return done null if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+    if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+      return done null
     return done no
 
   it 'should be load models from directory', (done) ->
     fromDir = direquire path.resolve 'models'
     fromApp = express.get 'models'
-    return done null if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+    if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+      return done null
     return done no
 
   it 'should be load helper from directory', (done) ->
     fromDir = direquire path.resolve 'helper'
     fromApp = express.get 'helper'
-    return done null if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+    if _.keys(fromDir).toString() is _.keys(fromApp).toString()
+      return done null
     return done no
 
   # テストすることがない
@@ -43,9 +46,10 @@ describe 'express-city', ->
       .end done
 
   it 'should be static file serving', (done) ->
+    file = fs.readFileSync path.resolve('dist', 'css', 'style.css'), 'utf-8'
     request(express)
       .get('/css/style.css')
       .expect(200)
-      .expect(fs.readFileSync path.resolve('dist', 'css', 'style.css'), 'utf-8')
+      .expect(file)
       .end done
 
