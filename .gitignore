@@ -4,3 +4,4 @@ dist
 public/css
 public/js
 node_modules
+config/env.json
